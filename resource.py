@@ -82,5 +82,32 @@ class Resource:
                 'title':    "wifi 1001",
                 'desc':     'get your free wifi here.',
                 'tags':     'wifi,internet'
+            },
+            {
+                'score':    0.0,
+                'status':   1,
+                'category': 'food',
+                'matchers': 'eat,tasty,dinner',
+                'title':    "we give away free meals",
+                'desc':     'let us know where you are and we will bring it to you',
+                'tags':     'free,meal'
+            },
+            {
+                'score':    0.0,
+                'status':   0,
+                'category': 'food',
+                'matchers': 'eat,tasty,dinner',
+                'title':    "too much food",
+                'desc':     'eat it all',
+                'tags':     'food,eat'
+            },
+            {
+                'score':    0.0,
+                'status':   -1,
+                'category': 'technology',
+                'matchers': 'wifi,internet,computer',
+                'title':    "wifi 1001",
+                'desc':     'get your free wifi here.',
+                'tags':     'wifi,internet'
             }
         ]

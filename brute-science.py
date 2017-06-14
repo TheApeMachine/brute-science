@@ -13,9 +13,9 @@ def main():
     expansions = ['food', 'eat', 'restaurant']
     resources  = Resource().small_test
 
+    b   = 1
     kl0 = random.uniform(-1.0, 1.0)
     kl1 = random.uniform(-1.0, 1.0)
-
     fl1 = random.uniform(-1.0, 1.0)
     fl2 = random.uniform(-1.0, 1.0)
     fl3 = random.uniform(-1.0, 1.0)
@@ -35,35 +35,38 @@ def main():
                 score = 0.0
 
                 if r["category"] == k:
-                    score += kl0 + fl1
+                    score += b + kl0 + fl1
                 if r['matchers'].count(k):
-                    score += kl0 + fl2
+                    score += b + kl0 + fl2
                 if r['title'].count(k):
-                    score += kl0 + fl3
+                    score += b + kl0 + fl3
                 if r['desc'].count(k):
-                    score += kl0 + fl4
+                    score += b + kl0 + fl4
                 if r['tags'].count(k):
-                    score += kl0 + fl5
+                    score += b + kl0 + fl5
 
                 r['score'] += score
                 # r['score']  = 1 / (1 + np.exp(-score))
+                # r['score']  = (np.exp(2 * score) - 1) / (np.exp(2 * score) + 1)
 
         for k in expansions:
             for r in resources:
                 score = 0.0
 
                 if r["category"] == k:
-                    score += kl1 + fl1
+                    score += b + kl1 + fl1
                 if r['matchers'].count(k):
-                    score += kl1 + fl2
+                    score += b + kl1 + fl2
                 if r['title'].count(k):
-                    score += kl1 + fl3
+                    score += b + kl1 + fl3
                 if r['desc'].count(k):
-                    score += kl1 + fl4
+                    score += b + kl1 + fl4
                 if r['tags'].count(k):
-                    score += kl1 + fl5
+                    score += b + kl1 + fl5
 
                 r['score'] += score
+                # r['score']  = 1 / (1 + np.exp(-score))
+                # r['score']  = (np.exp(2 * score) - 1) / (np.exp(2 * score) + 1)
 
         sorted_resources = sorted(resources, key=lambda k: k['score'])
 
