@@ -4,6 +4,7 @@
 
 import re
 import random
+import numpy as np
 from itertools import repeat
 from resource import Resource
 
@@ -12,14 +13,14 @@ def main():
     expansions = ['food', 'eat', 'restaurant']
     resources  = Resource().small_test
 
-    kl0 = 0.0
-    kl1 = 0.0
+    kl0 = random.uniform(-1.0, 1.0)
+    kl1 = random.uniform(-1.0, 1.0)
 
-    fl1 = 0.0
-    fl2 = 0.0
-    fl3 = 0.0
-    fl4 = 0.0
-    fl5 = 0.0
+    fl1 = random.uniform(-1.0, 1.0)
+    fl2 = random.uniform(-1.0, 1.0)
+    fl3 = random.uniform(-1.0, 1.0)
+    fl4 = random.uniform(-1.0, 1.0)
+    fl5 = random.uniform(-1.0, 1.0)
 
     eureka     = False
     iterations = 0
@@ -45,6 +46,7 @@ def main():
                     score += kl0 + fl5
 
                 r['score'] += score
+                # r['score']  = 1 / (1 + np.exp(-score))
 
         for k in expansions:
             for r in resources:
@@ -66,8 +68,8 @@ def main():
         sorted_resources = sorted(resources, key=lambda k: k['score'])
 
         c1 = 0
-        c2 = 1
-        c3 = 2
+        c2 = 2
+        c3 = 4
 
         result_count = 0
 
@@ -76,9 +78,9 @@ def main():
             results['neutral']  += sorted_resources[c2]['status']
             results['positive'] += sorted_resources[c3]['status']
 
-            c1 += (samples / 3) + 1
-            c2 += (samples / 3) + 1
-            c3 += (samples / 3) + 1
+            c1 += 1
+            c2 += 1
+            c3 += 1
 
             result_count += 1
 
@@ -90,18 +92,20 @@ def main():
             # We have found the optimal weights.
             eureka = True
         else:
+            print 'ITERATION: {}'.format(iterations)
+
             # Reset the scores.
             for r in resources:
                 r['score'] = 0.0
 
             # Adjust the weights.
-            kl0 = random.uniform(0.1, 1.0)
-            kl1 = random.uniform(0.1, 1.0)
-            fl1 = random.uniform(0.1, 1.0)
-            fl2 = random.uniform(0.1, 1.0)
-            fl3 = random.uniform(0.1, 1.0)
-            fl4 = random.uniform(0.1, 1.0)
-            fl5 = random.uniform(0.1, 1.0)
+            kl0 = random.uniform(-1.0, 1.0)
+            kl1 = random.uniform(-1.0, 1.0)
+            fl1 = random.uniform(-1.0, 1.0)
+            fl2 = random.uniform(-1.0, 1.0)
+            fl3 = random.uniform(-1.0, 1.0)
+            fl4 = random.uniform(-1.0, 1.0)
+            fl5 = random.uniform(-1.0, 1.0)
 
     print 'ITERATIONS      : {}'.format(iterations)
     print 'KEYWORD LEVEL 1 : {}'.format(kl0)

@@ -28,5 +28,59 @@ class Resource:
                 'title':    "wifi 1001",
                 'desc':     'get your free wifi here.',
                 'tags':     'wifi,internet'
+            },
+            {
+                'score':    0.0,
+                'status':   1,
+                'category': 'food',
+                'matchers': 'eat,tasty,dinner',
+                'title':    "burger restaurant",
+                'desc':     'you can get food here',
+                'tags':     'free,restaurant,burger'
+            },
+            {
+                'score':    0.0,
+                'status':   0,
+                'category': 'food',
+                'matchers': 'eat,tasty,dinner',
+                'title':    "food donations",
+                'desc':     'donate food here',
+                'tags':     'food,donate'
+            },
+            {
+                'score':    0.0,
+                'status':   -1,
+                'category': 'technology',
+                'matchers': 'wifi,internet,computer',
+                'title':    "wifi 1001",
+                'desc':     'get your free wifi here.',
+                'tags':     'wifi,internet'
+            },
+            {
+                'score':    0.0,
+                'status':   1,
+                'category': 'food',
+                'matchers': 'eat,tasty,dinner',
+                'title':    "pretty good place to eat",
+                'desc':     'food as far as you can see',
+                'tags':     'food,eat'
+            },
+            {
+                'score':    0.0,
+                'status':   0,
+                'category': 'food',
+                'matchers': 'eat,tasty,dinner',
+                'title':    "eat all our food",
+                'desc':     'you can eat a lot here',
+                'tags':     'food,eat'
+            },
+            {
+                'score':    0.0,
+                'status':   -1,
+                'category': 'technology',
+                'matchers': 'wifi,internet,computer',
+                'title':    "wifi 1001",
+                'desc':     'get your free wifi here.',
+                'tags':     'wifi,internet'
             }
         ]
